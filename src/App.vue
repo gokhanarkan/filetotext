@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Nav />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Nav from './components/Nav.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'app',
   components: {
-    Nav
+    Nav,
+    Footer
   }
 }
 </script>
