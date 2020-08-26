@@ -8,7 +8,16 @@
       @vdropzone-success="getResponse"
       :options="dropzoneOptions"
        />
-    <TextArea v-if="textBox" text="Hello" />
+    <TextArea v-if="textBox" :text="text" />
+          <button 
+          v-if="textBox"
+        class="bg-transparent hover:bg-gray-400 text-black-400 font-semibold hover:text-white 
+              py-2 px-4 border border-gray-500 hover:border-transparent
+              rounded mt-4 ml-4 absolute left-0"
+        @click=newFile
+      >
+        Upload a new file
+      </button>
     <Footer />
   </div>
 </template>
@@ -37,7 +46,7 @@
         textBox: false,
         showInfo: true,
         dropzoneOptions: {
-          url: 'http://localhost:5001',
+          url: 'http://165.232.71.137/',
           thumbnailWidth: 200,
           maxFilesize: 0.5,
           maxFiles: 1,
@@ -49,6 +58,14 @@
         this.text = response.data;
         this.showInfo = false;
         this.textBox = true;
+      },
+      removeFile() {
+        this.$refs.myVueDropzone.dropzone.removeFile(this.$refs.myVueDropzone.dropzone.files[0])
+      },
+      newFile() {
+        this.removeFile();
+        this.textBox = false,
+        this.text = '';
       }
     }
   }

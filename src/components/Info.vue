@@ -1,9 +1,10 @@
 <template>
   <div v-if=show class="mb-8">
-    <p>Ever needed to export the text on an image? Because I did.</p>
-    <p>When I search file to text ocr on google, I get really dodgy websites.</p>
-    <p>Hence, I created this web application; where you can upload a file and get the text.</p>
-    <p>Blazingly fast and open source.</p>
+    <p>I needed a text scanner service really quick for a task.</p>
+    <p>The websites I came across on Google were really dodgy.</p>
+    <p>So I created this along with a public API.</p>
+    <p>This app is open source, I don't save your files anywhere.</p>
+    <p>Surely, Amazon does though!</p>
   </div>
 </template>
 
