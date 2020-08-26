@@ -2,7 +2,7 @@
   <footer class="footer">
     <section class="bg-indigo-400 py-2 w-full">
     <div class="container mx-auto px-8">
-        <p class="text-white">If you want to support, why not <a href="https://www.buymeacoffee.com/gogo" target="_blank" class="underline">buy me a coffee?</a></p>
+        <p class="text-white">If you want to support, why not <a href="https://www.buymeacoffee.com/gogo" target="_blank" class="underline" rel="noreferrer noopener">buy me a coffee?</a></p>
     </div>
 </section>
   </footer>
@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: 'Footer'
+    name: 'Footer',
   }
 </script>
 

@@ -1,35 +1,54 @@
 <template>
   <div id="app">
     <Nav />
-    <vue2Dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue2Dropzone>
+    <Info :show="showInfo" />
+    <vue2Dropzone 
+      ref="myVueDropzone"
+      id="dropzone" 
+      @vdropzone-success="getResponse"
+      :options="dropzoneOptions"
+       />
+    <TextArea v-if="textBox" text="Hello" />
     <Footer />
   </div>
 </template>
 
 <script>
+  /* eslint-disable */
   import Nav from './components/Nav.vue'
-  import Footer from './components/Footer.vue'
+  import Info from './components/Info.vue'
   import vue2Dropzone from 'vue2-dropzone'
   import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+  import TextArea from './components/TextArea'
+  import Footer from './components/Footer.vue'
 
   export default {
     name: 'app',
     components: {
       Nav,
+      Info,
+      vue2Dropzone,
+      TextArea,
       Footer,
-      vue2Dropzone
     },
     data() {
       return {
+        text: '',
+        textBox: false,
+        showInfo: true,
         dropzoneOptions: {
-          url: 'https://httpbin.org/post',
-          thumbnailWidth: 150,
+          url: 'http://localhost:5001',
+          thumbnailWidth: 200,
           maxFilesize: 0.5,
-          headers: {
-            "My-Awesome-Header": "header value"
-          }
-        },
-        text: ''
+          maxFiles: 1,
+        }
+      }
+    },
+    methods: {
+      getResponse(file, response) {
+        this.text = response.data;
+        this.showInfo = false;
+        this.textBox = true;
       }
     }
   }
