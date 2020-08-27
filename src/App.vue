@@ -46,7 +46,7 @@
         textBox: false,
         showInfo: true,
         dropzoneOptions: {
-          url: 'http://165.232.71.137/',
+          url: 'https://api.filetotext.io/',
           thumbnailWidth: 200,
           maxFilesize: 0.5,
           maxFiles: 1,
