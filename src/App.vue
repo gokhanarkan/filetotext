@@ -2,22 +2,17 @@
   <div id="app">
     <Nav />
     <Info :show="showInfo" />
-    <vue2Dropzone 
-      ref="myVueDropzone"
-      id="dropzone" 
-      @vdropzone-success="getResponse"
-      :options="dropzoneOptions"
-       />
+    <vue2Dropzone ref="myVueDropzone" id="dropzone" @vdropzone-success="getResponse" :options="dropzoneOptions" />
     <TextArea v-if="textBox" :text="text" />
-          <button 
-          v-if="textBox"
-        class="bg-transparent hover:bg-gray-400 text-black-400 font-semibold hover:text-white 
+    <div v-if="textBox">
+      <button
+      class="bg-transparent hover:bg-gray-400 text-black-400 font-semibold hover:text-white 
               py-2 px-4 border border-gray-500 hover:border-transparent
-              rounded mt-4 ml-4 absolute left-0"
-        @click=newFile
-      >
+              rounded m-2 mb-20 left-0"
+      @click=newFile>
         Upload a new file
       </button>
+    </div>
     <Footer />
   </div>
 </template>
@@ -60,7 +55,10 @@
         this.textBox = true;
       },
       removeFile() {
-        this.$refs.myVueDropzone.dropzone.removeFile(this.$refs.myVueDropzone.dropzone.files[0])
+        const files = this.$refs.myVueDropzone.dropzone.files;
+        files.forEach(file => {
+          this.$refs.myVueDropzone.dropzone.removeFile(file);
+        })
       },
       newFile() {
         this.removeFile();
@@ -78,5 +76,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+  }
+  #dropzone {
+    width: 90%;
+    margin: auto;
   }
 </style>
