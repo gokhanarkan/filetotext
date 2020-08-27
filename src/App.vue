@@ -48,7 +48,7 @@
         dropzoneOptions: {
           url: 'https://api.filetotext.io/',
           thumbnailWidth: 200,
-          maxFilesize: 0.5,
+          maxFilesize: 5,
           maxFiles: 1,
         }
       }
