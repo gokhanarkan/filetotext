@@ -22,8 +22,8 @@ export default {
 
 .textArea {
   min-height: 200px;
-  width: 90%;
-  text-align: center;
+  width: 100%;
+  text-align: left;
   margin: auto;
   margin-top: 0.5rem;
 }

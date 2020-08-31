@@ -1,20 +1,34 @@
 <template>
   <div id="app">
     <Nav />
-    <Info :show="showInfo" />
-    <vue2Dropzone ref="myVueDropzone" id="dropzone"
-                  @vdropzone-success="getResponse" 
-                  :options="dropzoneOptions" />
-    <TextArea v-if="textBox" :text="text" />
-    <div v-if="textBox">
-      <button
-      class="bg-transparent hover:bg-gray-400 text-black-400 font-semibold hover:text-white 
-              py-2 px-4 border border-gray-500 hover:border-transparent rounded m-2 mb-20 left-0"
-      @click=newFile>
-        Upload a new file
-      </button>
-    </div>
-    <Footer />
+    <!-- Layout -->
+    <div class="max-w-7xl mx-auto my-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto mt-2 md:mt-6 lg:mt-10 xl:mt-18">
+        <!-- Card -->
+        <div class="bg-white overflow-hidden shadow rounded-lg">
+          <!-- First Card -->
+          <div v-if="showInfo" class="border-b border-gray-200 px-4 py-5 sm:px-6">
+            <Info :show="showInfo" />
+          </div>
+          <!-- End First Card -->
+          <!-- Main Card -->
+          <div class="px-4 py-5 sm:p-6">
+            <vue2Dropzone ref="myVueDropzone" id="dropzone" @vdropzone-success="getResponse"
+              :options="dropzoneOptions" />
+            <TextArea :text="text" />
+            </div>
+            <!-- End Main Card -->
+            <!-- Last Card -->
+            <div class="border-t border-gray-200 px-4 py-4 sm:px-6">
+              <Buttons @remove-file="removeFile" :showButton="showButton" />
+            </div>
+            <!-- End Last Card -->
+          </div>
+          <!-- End Card -->
+        </div>
+      </div>
+      <!-- End Layout -->
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -26,6 +40,7 @@
   import 'vue2-dropzone/dist/vue2Dropzone.min.css'
   import TextArea from './components/TextArea'
   import Footer from './components/Footer.vue'
+  import Buttons from './components/Buttons.vue'
 
   export default {
     name: 'app',
@@ -34,15 +49,16 @@
       Info,
       vue2Dropzone,
       TextArea,
+      Buttons,
       Footer,
     },
     data() {
       return {
         text: '',
-        textBox: false,
+        showButton: false,
         showInfo: true,
         dropzoneOptions: {
-          url: 'https://api.filetotext.io/',
+          url: 'https://api.filetotext.io/use_aws',
           thumbnailWidth: 200,
           maxFilesize: 5,
           maxFiles: 1,
@@ -55,14 +71,15 @@
       getResponse(file, response) {
         this.text = response.data;
         this.showInfo = false;
-        this.textBox = true;
+        this.showButton = true;
       },
       removeFile() {
         this.$refs.myVueDropzone.dropzone.removeAllFiles();
+        this.text = '';
       },
       newFile() {
         this.removeFile();
-        this.textBox = false,
+        this.showButton = false,
         this.text = '';
       }
     }
@@ -78,7 +95,6 @@
     color: #2c3e50;
   }
   #dropzone {
-    width: 90%;
     margin: auto;
   }
 </style>
