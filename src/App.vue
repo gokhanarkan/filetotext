@@ -9,7 +9,7 @@
           <div v-if="showInfo" class="border-b border-gray-200 px-4 py-5 sm:px-6">
             <Info :show="showInfo" />
           </div>
-          <div class="px-4 py-5 sm:p-6 sm:pb-2 mb-10">
+          <div class="px-4 py-5 sm:p-6 sm:pb-2 mb-2" v-bind:class="{ 'mb-10' : showButton }">
             <Dropzone ref="dropzone" @get-response="getResponse" />
             <TextArea :text="text" />
             <span v-if="showButton" class="inline-flex rounded-md shadow-sm mt-2 float-right">
