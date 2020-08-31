@@ -12,6 +12,7 @@
     "core-js": "^2.6.5",
     "tailwindcss": "^1.7.4",
     "vue": "^2.6.10",
+    "vue-clipboard2": "^0.3.1",
     "vue2-dropzone": "^3.6.0"
   },
   "devDependencies": {
