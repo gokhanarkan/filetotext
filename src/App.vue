@@ -2,8 +2,8 @@
   <div id="app">
     <Nav />
     <!-- Layout -->
-    <div class="max-w-7xl mx-auto my-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto mt-2 md:mt-6 lg:mt-10 xl:mt-18">
+    <div class="max-w-7xl mx-auto my-auto px-4 py-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto md:mt-6 lg:mt-10 xl:mt-18">
         <!-- Card -->
         <div class="bg-white overflow-hidden shadow rounded-lg">
           <div v-if="showInfo" class="border-b border-gray-200 px-4 py-5 sm:px-6">
