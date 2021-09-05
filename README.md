@@ -1,20 +1,20 @@
-[Live Project Link](https://filetotext.io/) |
-[GitHub Repo](https://github.com/gokhj/filetotext.io/) |
-[Backend](https://github.com/gokhj/api.filetotext.io)
+[Live Project Link](https://filetotext.arkan.me/) |
+[GitHub Repo](https://github.com/gokhj/filetotext/) |
+[Backend](https://github.com/gokhj/api.filetotext-api/)
 
-This README is the copy of [my blog post](https://arkan.me/filetotextio/). Use accordingly!
+This README is the copy of [my blog post](https://gokhanarkan.com/filetotext/). Use accordingly!
 
 A couple of weeks ago, a colleague and I needed a tool to export text from some images. The images were containing long cURL request codes about the backend of a product that we are building together. This was a report generated from a cybersecurity company where they pointed out some issues and vulnerabilities regarding the APIs we built. It was all good, we met in terms, and the fix session was started.
 
 There was a minor setback, since all code was actually pasted on the PDF as images, we could not copy it quickly.
 
-![cURL code](https://arkan.me/filetotextio/curl.png)
+![cURL code](images/curl.png)
 
 As a somewhat lazy person, I thought about rewriting them one by one. However, some of the requests were not easy to rewrite because they were too long and complicated so we needed the help of optical character recognition technology so that we can reproduce the code to see what are we getting from the specific endpoints.
 
 This was all when it started; I searched “free OCR service” on Google; the results were not satisfactory. You can easily imagine what sort of websites I came across. The kinds of that have multiple download buttons… They reminded me the page of Save Walter White.
 
-![Save Walter White](https://arkan.me/filetotextio/saveww.png)
+![Save Walter White](images/saveww.png)
 
 Speaking of Save Walter White website, this instance also reminded me of Akrep Nalan's personal website. Akrep Nalan was used to be a Turkish TV celebrity who played a teacher role in a wildly popular TV series called Hayat Bilgisi. She was also a singer. Before then she was actually working as an accountant for a small company, but with her luck one day she won the jackpot in horse racing. Hence, she followed her dreams since she does not need to worry about her finances anymore.
 
@@ -24,13 +24,13 @@ Here is her website, untouched from the early 2000s.
 
 Oh, fun fact: Akrep means Scorpion. Akrep was the horse's name which came first, so newspapers headlined her Akrep Nalan, and she embraced that name afterwards.
 
-![Akrep Nalan Website](https://arkan.me/filetotextio/akrepnalan.png)
+![Akrep Nalan Website](images/akrepnalan.png)
 
 You can check the said website [here](http://www.akrepnalan.com/){:target="\_blank"}.
 
 Back in 2018, I sent an email to Akrep Nalan; sadly I have never received a response.
 
-![My Email to Akrep Nalan](https://arkan.me/filetotextio/akrepnalan2.png)
+![My Email to Akrep Nalan](images/akrepnalan2.png)
 
 The context of the email is essentially saying hi and how is she doing.
 
@@ -82,7 +82,7 @@ As a further change, I removed the form status of the file upload facility. I ju
 
 This is the current product:
 
-![App Interface](https://arkan.me/filetotextio/app.png)
+![App Interface](images/app.png)
 
 #### What's next?
 
